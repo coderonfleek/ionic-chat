@@ -1,8 +1,8 @@
-#Ionic Chat Starter
+# Ionic Chat Starter
 
 A Chat Application built with Ionic 1 with a Node Backend Server (Server Code Included). 
 
-#Features
+## Features
 1. Create Users
 2. Create Rooms
 3. Chat Room
