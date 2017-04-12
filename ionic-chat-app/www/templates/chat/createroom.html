@@ -1,0 +1,47 @@
+<ion-view view-title="Enter Room - {{currentUser}}" ng-controller="RoomsCtrl as roomer">
+  <ion-content class="padding">
+    <p>
+      Client Status :
+      <span ng-class="{'positive':client_online, 'assertive' : !client_online}">
+        <b ng-show="client_online">Online</b>
+        <b ng-hide="client_online">Offline</b>
+      </span>
+    </p>
+
+    <p>
+      Create New Room Or Enter a Room
+    </p>
+    <p class="positive">
+      Create Room
+    </p>
+
+    <form name="createRoomForm" ng-submit="roomer.createNewRoom(roomer.roomName)">
+      <div class="list list-inset">
+        <label class="item item-input">
+          <input type="text" placeholder="Enter Room Name" ng-model="roomer.roomName" required>
+        </label>
+
+        <p>
+          <button class="button button-block button-positive" ng-disabled="createRoomForm.$invalid">
+            Create Room
+          </button>
+        </p>
+      </div>
+    </form>
+
+    <p class="assertive">
+      Enter Room
+    </p>
+
+    <div class="list">
+
+      <a class="item item-icon-left" href="#" ng-repeat="room in myRooms" ng-click="roomer.goToRoom(room)">
+
+        {{room.group_name}}
+        <span class="badge badge-assertive">{{newRoomMsgs[room._id] || 0}}</span>
+      </a>
+
+    </div>
+
+  </ion-content>
+</ion-view>

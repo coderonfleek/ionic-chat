@@ -1,0 +1,104 @@
+/*
+Chat styles
+*/
+
+.chatbox, #message-form {
+  position:absolute;
+  bottom: 0px;
+}
+.message-input {
+  margin-top: 10px;
+}
+
+.chatbox-container {
+  font-size: 1.2rem;
+  color: rgba(0,0,0,0.8);
+  position:relative;
+  height: 300px;
+  border: 1px solid rgba(0,0,255, 0.2);
+  padding: 10px;
+  line-height: 29px;
+  overflow: scroll;
+}
+
+.nopadding{
+  /*padding: 0;*/
+}
+
+
+/*New Chat Styles*/
+.item-avatar-right{
+  text-align: right !important;
+}
+
+.bar.item-input-inset .item-input-wrapper{
+  height: 50px;
+}
+
+.bubbleLeft{
+  position: relative;
+  width: 100%;
+  min-height: 50px;
+  padding: 5px;
+  background: #F8BBD0;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  box-shadow: -2px 2px 2px 0 rgba(178, 178, 178, .4);
+  margin-bottom: 5px;
+
+}
+
+.bubbleLeft:after{
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-width: 7px 20px 7px 0;
+  border-color: transparent #F8BBD0;
+  display: block;
+  width: 0;
+  z-index: 1;
+  margin-top: -7px;
+  /*right: -20px;*/
+  right: 100%;
+  top: 40px;
+}
+
+.bubbleRight{
+  position: relative;
+  width: 100%;
+  min-height: 50px;
+  padding: 5px;
+  background: #C5cae9;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  box-shadow: -2px 2px 2px 0 rgba(178, 178, 178, .4);
+  margin-bottom: 5px;
+
+}
+
+.bubbleRight:after{
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-width: 7px 0 7px 20px;
+  border-color: transparent #C5CAE9;
+  display: block;
+  width: 0;
+  z-index: 1;
+  margin-top: -7px;
+  right: -20px;
+  top: 40px;
+}
+
+
+/*Merchant*/
+.option_icons{
+  margin-bottom: 20px;
+}
+
+.option_icons .col{
+  margin-left: 5px;
+  font-size: 14px;
+}

@@ -1,0 +1,42 @@
+<ion-view ng-controller="RoomMessagesCtrl as chatroom" title="{{currentRoom.group_name}}">
+
+
+
+  <div class="bar bar-subheader">
+    <button class="button button-assertive icon ion-eye" ui-sref="app.viewmembers"></button>
+    <p class="title">
+      {{currentUser}}
+    </p>
+    <button class="button button-positive icon ion-plus" ui-sref="app.addmember" ng-show="roomOwner"></button>
+  </div>
+
+  <ion-content class="has-subheader has-footer" delegate-handle="mainScroll" style="margin-bottom: 15px !important; margin-top: 10px !important;">
+    <ion-list class="list">
+      <li ng-repeat="msg in chatroom.messages | orderBy : 'time_stamp' | unique:'duplicate_msg_id' track by $index" ng-class="{'item item-avatar-right item-text-wrap nopadding': currentUser == msg.user_id, 'item item-avatar-left item-text-wrap nopadding': currentUser != msg.user_id}">
+        <img src="http://www.smartcallcentersolutions.com/images/profile_icon.png" alt="" />
+        <div ng-class="{'bubbleRight': currentUser == msg.user_id, 'bubbleLeft': currentUser != msg.user_id}">
+          <h2><b>{{msg.user_id}}:</b></h2>
+          <p>{{msg.message}}</p>
+          <p>
+            <i ng-class="{'ion ion-checkmark-round balanced': (currentUser == msg.user_id && msg.sent_status === true), 'ion ion-refresh assertive' : (currentUser == msg.user_id && msg.sent_status === false)}"></i>
+          </p>
+          <p>
+            <small>{{chatroom.message_time(msg.time_stamp)}}</small>
+          </p>
+
+        </div>
+      </li>
+    </ion-list>
+  </ion-content>
+
+  <div class="bar bar-footer item-input-inset footer-item-input-inset">
+   <!-- <form name="myform" ng-submit="chatroom.addMessage(chatroom.theMessage)">-->
+      <label class="item-input-wrapper">
+        <i class="icon ion-android-chat placeholder-icon"></i>
+        <input type="text" ng-model="chatroom.theMessage" placeholder="Type your message..." required ng-enter="chatroom.addMessage(chatroom.theMessage)"
+        />
+      </label>
+      <button class="button button-clear ion-android-send icon" ng-click="chatroom.addMessage(chatroom.theMessage)"></button>
+   <!-- </form>-->
+  </div>
+</ion-view>

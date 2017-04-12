@@ -1,0 +1,52 @@
+<ion-view view-title="Diliva - {{client_status}}" ng-controller="CreateUserCtrl as createuser">
+  <ion-content class="padding">
+    <p>
+      Client Status :
+      <span ng-class="{'positive':client_online, 'assertive' : !client_online}">
+        <b ng-show="client_online">Online</b>
+        <b ng-hide="client_online">Offline</b>
+      </span>
+    </p>
+
+    <p>
+      Create New User Or Select a User
+    </p>
+    <p class="positive">
+      Create User
+    </p>
+
+    <form name="createUserForm" ng-submit="createuser.createNewUser(createuser.username)">
+      <div class="list list-inset">
+        <label class="item item-input">
+          <input type="text" placeholder="Enter Username" ng-model="createuser.username" required>
+        </label>
+
+        <p>
+          <button class="button button-block button-positive" ng-disabled="createUserForm.$invalid">
+            Create User
+          </button>
+        </p>
+      </div>
+    </form>
+
+    <p class="assertive">
+      Select User
+    </p>
+    <form name="selectUserForm" ng-submit="createuser.selectUser(createuser.selecteduser)">
+      <label class="item item-input item-select">
+        <div class="input-label">
+          Select User
+        </div>
+        <select ng-model="createuser.selecteduser" ng-options="user.username as user.username for user in allusers" required>
+        </select>
+      </label>
+
+      <p>
+        <button class="button button-block button-positive" ng-disabled="selectUserForm.$invalid">
+          Enter As {{createuser.selecteduser}}
+        </button>
+      </p>
+    </form>
+
+  </ion-content>
+</ion-view>

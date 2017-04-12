@@ -1,0 +1,11 @@
+{
+  "name": "HelloIonic",
+  "private": "false",
+  "dependencies": {
+    "angular-socket-io" : "latest",
+    "ngCordova" : "latest"
+  },
+  "devDependencies": {
+    "ionic": "driftyco/ionic-bower#1.3.3"
+  }
+}

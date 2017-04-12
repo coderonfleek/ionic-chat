@@ -1,0 +1,12 @@
+<ion-view view-title="Members - {{currentRoom.group_name}}" ng-controller="ViewMembersCtrl as member">
+  <ion-content class="padding">
+    <div class="list">
+
+      <div class="item item-button-right" ng-repeat="person in members">
+        {{person}}
+      </div>
+
+    </div>
+
+  </ion-content>
+</ion-view>

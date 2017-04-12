@@ -1,0 +1,6 @@
+angular-socket-io
+moment.js
+underscorejs
+
+cordova-plugin-whitelist
+cordova-plugin-websocket

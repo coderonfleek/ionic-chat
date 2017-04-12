@@ -1,0 +1,15 @@
+<ion-view view-title="Add New Member" ng-controller="AddRoomMemberCtrl as addmember">
+  <ion-content class="padding">
+    <div class="list">
+
+      <div class="item item-button-right" ng-repeat="person in non_members">
+        {{person.username}}
+        <button class="button button-positive" ng-click="addmember.addNewMember(person)">
+          <i class="icon ion-plus"></i>
+        </button>
+      </div>
+
+    </div>
+
+  </ion-content>
+</ion-view>

@@ -1,0 +1,11 @@
+{
+  "name": "diliva-chat-server",
+  "main": "server.js",
+  "version": "0.0.1",
+  "dependencies": {
+    "express": "^4.13.3",
+    "mongoose": "latest",
+    "morgan": "latest",
+    "socket.io": "latest"
+  }
+}
