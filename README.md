@@ -11,3 +11,9 @@ A Chat Application built with Ionic 1 with a Node Backend Server (Server Code In
 6. Offline Features
 
 Simply run `npm install` in the server folder and `bower install` in the ionic-chat-app folder
+
+In `server.js` change the connection string in `mongoose.connect` to that of your mongodb instance
+
+Also in `www/app/chat/chat.services.js` change the connection string in `io.connect` to that of the server you are listening on
+
+Enjoy
